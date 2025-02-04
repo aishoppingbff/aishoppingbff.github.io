@@ -3,85 +3,372 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Join the Waitlist</title>
     <link rel="icon" type="image/png" href="images/favicon.png">
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Montserrat:wght@300;500;700&family=Playfair+Display:wght@400;700&display=swap');
+        
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            font-family: 'Montserrat', sans-serif;
         }
 
         body {
             width: 100vw;
             height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
             text-align: center;
             background-size: 100% 100%;
             background-position: center;
+            background-attachment: fixed;
             background-repeat: no-repeat;
-            overflow: hidden;
-            font-family: Arial, sans-serif;
             color: white;
+            overflow-x: hidden;
         }
 
-        /* Default Background (for Desktop) */
         body {
-            background-image: url('images/desktop.png');
+            background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.7)), url('images/desktop.png');
         }
 
-        /* Mobile-specific Background */
         @media (max-width: 768px) {
             body {
-                background-image: url('images/mobile.png');
+                background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.7)), url('images/mobile.png');
             }
         }
 
+        .hero {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            width: 100%;
+            padding: 40px 20px;
+            position: relative;
+            overflow: visible;
+            background: radial-gradient(circle at center, rgba(255, 255, 255, 0.1), transparent);
+        }
+
         .container {
-            background: rgba(0, 0, 0, 0.6);
-            padding: 20px;
-            border-radius: 10px;
+            background: rgba(0, 0, 0, 0.7);
+            padding: 70px;
+            border-radius: 0px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.6),
+                        inset 0 0 30px rgba(255,255,255,0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            animation: borderGlow 4s infinite linear;
+            position: relative;
+            max-width: 100%;
+            margin: 0 auto;
+        }
+
+        @keyframes borderGlow {
+            0% { border-color: rgba(255,255,255,0.1); }
+            50% { border-color: rgba(255,255,255,0.3); }
+            100% { border-color: rgba(255,255,255,0.1); }
         }
 
         h1 {
-            font-size: 24px;
-            margin-bottom: 20px;
+            font-size: 72px;
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            margin-bottom: 35px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            background: linear-gradient(135deg, #ffffff 0%, #cccccc 50%, #ffffff 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            line-height: 1.2;
+            position: relative;
         }
 
         input[type="email"] {
-            width: 80%;
-            max-width: 300px;
-            padding: 10px;
-            font-size: 16px;
+            width: 100%;
+            max-width: 450px;
+            padding: 20px;
+            font-size: 17px;
             border: none;
-            border-radius: 5px;
+            border-bottom: 2px solid rgba(255,255,255,0.3);
+            background: transparent;
+            color: white;
+            text-align: center;
+            outline: none;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        input[type="email"]:focus {
+            border-bottom-color: #ffffff;
+        }
+
+        input::placeholder {
+            color: rgba(255, 255, 255, 0.5);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 14px;
         }
 
         button {
-            margin-top: 10px;
-            padding: 10px 20px;
+            margin-top: 25px;
+            padding: 20px 50px;
             font-size: 16px;
-            color: white;
-            background-color: #ff6600;
+            color: black;
+            background: #ffffff;
             border: none;
-            border-radius: 5px;
             cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 600;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            position: relative;
+            overflow: hidden;
         }
 
         button:hover {
-            background-color: #e65c00;
+            background: #000000;
+            color: #ffffff;
+        }
+
+        .info-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 0px;
+            padding: 120px 8%;
+            background: #000000;
+            color: #ffffff;
+            position: relative;
+        }
+
+        .info-section {
+            background: transparent;
+            padding: 50px 40px;
+            transition: all 0.3s ease;
+            position: relative;
+            border-right: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .info-section:last-child {
+            border-right: none;
+        }
+
+        .info-section:hover {
+            background: rgba(255,255,255,0.05);
+        }
+
+        .info-section h2 {
+            font-size: 28px;
+            margin-bottom: 25px;
+            font-family: 'Playfair Display', serif;
+            color: #ffffff;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .info-section p {
+            font-size: 15px;
+            line-height: 1.9;
+            color: rgba(255, 255, 255, 0.7);
+            letter-spacing: 1px;
+        }
+
+        .steps-container {
+            display: flex;
+            flex-direction: column;
+            padding: 120px 8%;
+            background: #000000;
+            color: #ffffff;
+            position: relative;
+        }
+
+        .steps-container h1 {
+            font-size: 60px;
+            margin-bottom: 100px;
+        }
+
+        .step {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 100px;
+            padding: 60px 0;
+            position: relative;
+        }
+
+        .step:not(:last-child)::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 20%;
+            right: 20%;
+            height: 1px;
+            background: rgba(255,255,255,0.1);
+        }
+
+        .step img {
+            width: 400px;
+            height: 400px;
+            object-fit: cover;
+            filter: grayscale(100%) contrast(120%);
+            transition: all 0.5s ease;
+        }
+
+        .step img:hover {
+            filter: grayscale(0%) contrast(100%);
+            transform: scale(1.05);
+        }
+
+        .step-text {
+            max-width: 550px;
+        }
+
+        .step-text h2 {
+            font-size: 36px;
+            margin-bottom: 25px;
+            font-family: 'Playfair Display', serif;
+            color: #ffffff;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            position: relative;
+        }
+
+        .step-text h2::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 0;
+            width: 100px;
+            height: 1px;
+            background: #ffffff;
+        }
+
+        .step-text p {
+            font-size: 17px;
+            line-height: 1.9;
+            color: rgba(255, 255, 255, 0.7);
+            letter-spacing: 1px;
+        }
+
+        @media (max-width: 768px) {
+            .info-container {
+                grid-template-columns: 1fr;
+                padding: 70px 25px;
+            }
+
+            .info-section {
+                padding: 35px;
+                border-right: none;
+                border-bottom: 1px solid rgba(255,255,255,0.1);
+            }
+
+            .info-section:last-child {
+                border-bottom: none;
+            }
+
+            .step {
+                flex-direction: column;
+                text-align: center;
+                padding: 50px 0;
+                gap: 40px;
+            }
+
+            .step img {
+                width: 300px;
+                height: 300px;
+                filter: none;  /* Remove grayscale filter */
+            }
+
+            h1 {
+                font-size: 40px;
+            }
+
+            .steps-container h1 {
+                font-size: 46px;
+                margin-bottom: 60px;
+                padding: 0 15px;
+            }
+
+            .container {
+                padding: 45px 25px;
+            }
+
+            .step-text h2::after {
+                left: 50%;
+                transform: translateX(-50%);
+            }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Want to find clothes that you love at a discount??</h1>
-        <form action="https://formspree.io/f/meoekrne" method="POST">
-            <input type="email" placeholder="Enter your email" required>
-            <button type="submit">Join Waitlist</button>
-        </form>
+    <div class="hero">
+        <div class="container">
+            <h1>Join The Waitlist</h1>
+            <form action="https://formspree.io/f/meoekrne" method="POST">
+                <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                <br>
+                <button type="submit">Join The Movement</button>
+            </form>
+        </div>
+    </div>
+    
+    <div class="info-container">
+        <div class="info-section">
+            <h2>Future of Fashion</h2>
+            <p>Discover curated pieces that define the next era of style.</p>
+        </div>
+
+        <div class="info-section">
+            <h2>Your Signature Look</h2>
+            <p>AI-powered styling that understands your unique aesthetic.</p>
+        </div>
+
+        <div class="info-section">
+            <h2>Early Access</h2>
+            <p>Be among the first to experience fashion's digital revolution.</p>
+        </div>
+    </div>
+
+    <div class="steps-container">
+        <h1>The Experience</h1>
+        <div class="step">
+            <img src="images/install.png" alt="Step 1">
+            <div class="step-text">
+                <h2>Install Your Style AI</h2>
+                <p>Your digital fashion curator awaits. Coming soon.</p>
+            </div>
+        </div>
+        <div class="step">
+            <div class="step-text">
+                <h2>Browse & Discover</h2>
+                <p>Every click refines your personal style algorithm.</p>
+            </div>
+            <img src="images/shop.png" alt="Step 2">
+        </div>
+        <!-- <div class="step">
+            <img src="images/pdp.png" alt="Step 3">
+            <div class="step-text">
+                <h2>Curated Selection</h2>
+                <p>Receive handpicked recommendations that align with your aesthetic vision.</p>
+            </div>
+        </div> -->
+        <div class="step">
+            <img src="images/bff.png" alt="Step 3">
+            <div class="step-text">
+                <h2>Elevate Your Wardrobe</h2>
+                <p>Transform your style while maintaining your budget. Luxury aesthetics meet smart spending.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="hero">
+        <div class="container">
+            <h1>Join The Waitlist</h1>
+            <form action="https://formspree.io/f/meoekrne" method="POST">
+                <input type="email" id="email-bottom" name="email" placeholder="Enter your email" required>
+                <button type="submit">Reserve Your Spot</button>
+            </form>
+        </div>
     </div>
 </body>
 </html>
