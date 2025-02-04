@@ -3,14 +3,85 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sign Up</title>
+    <title>Join the Waitlist</title>
+    <link rel="icon" type="image/png" href="images/favicon.png">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background-size: 100% 100%;
+            background-position: center;
+            background-repeat: no-repeat;
+            overflow: hidden;
+            font-family: Arial, sans-serif;
+            color: white;
+        }
+
+        /* Default Background (for Desktop) */
+        body {
+            background-image: url('images/desktop.png');
+        }
+
+        /* Mobile-specific Background */
+        @media (max-width: 768px) {
+            body {
+                background-image: url('images/mobile.png');
+            }
+        }
+
+        .container {
+            background: rgba(0, 0, 0, 0.6);
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        h1 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        input[type="email"] {
+            width: 80%;
+            max-width: 300px;
+            padding: 10px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+        }
+
+        button {
+            margin-top: 10px;
+            padding: 10px 20px;
+            font-size: 16px;
+            color: white;
+            background-color: #ff6600;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #e65c00;
+        }
+    </style>
 </head>
 <body>
-    <h2>Sign Up for Updates</h2>
-    <form action="https://formspree.io/f/meoekrne" method="POST">
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email" required>
-        <button type="submit">Sign Up</button>
-    </form>
+    <div class="container">
+        <h1>Want to find clothes that you love at a discount??</h1>
+        <form action="https://formspree.io/f/meoekrne" method="POST">
+            <input type="email" placeholder="Enter your email" required>
+            <button type="submit">Join Waitlist</button>
+        </form>
+    </div>
 </body>
 </html>
