@@ -27,12 +27,12 @@
         }
 
         body {
-            background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.7)), url('images/desktop.png');
+            background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.3)), url('images/desktop.png');
         }
 
         @media (max-width: 768px) {
             body {
-                background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.7)), url('images/mobile.png');
+                background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.3)), url('images/mobile.png');
             }
         }
 
@@ -185,6 +185,7 @@
         .steps-container h1 {
             font-size: 60px;
             margin-bottom: 100px;
+            text-align: center;
         }
 
         .step {
@@ -210,17 +211,18 @@
             width: 400px;
             height: 400px;
             object-fit: cover;
-            filter: grayscale(100%) contrast(120%);
+            /* filter: grayscale(100%) contrast(120%); */
             transition: all 0.5s ease;
         }
 
         .step img:hover {
-            filter: grayscale(0%) contrast(100%);
+            /* filter: grayscale(0%) contrast(100%); */
             transform: scale(1.05);
         }
 
         .step-text {
             max-width: 550px;
+            text-align: left;
         }
 
         .step-text h2 {
@@ -231,6 +233,7 @@
             text-transform: uppercase;
             letter-spacing: 2px;
             position: relative;
+            text-align: left;
         }
 
         .step-text h2::after {
@@ -287,6 +290,7 @@
                 font-size: 46px;
                 margin-bottom: 60px;
                 padding: 0 15px;
+                text-align: center;
             }
 
             .container {
@@ -296,6 +300,14 @@
             .step-text h2::after {
                 left: 50%;
                 transform: translateX(-50%);
+            }
+
+            .step-text {
+                text-align: left;
+            }
+
+            .step-text h2 {
+                text-align: left;
             }
         }
     </style>
