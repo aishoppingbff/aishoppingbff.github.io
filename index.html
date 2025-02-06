@@ -5,13 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/png" href="images/favicon.png">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Montserrat:wght@300;500;700&family=Playfair+Display:wght@400;700&display=swap');
+        @font-face {
+            font-family: 'Ravensara Sans';
+            src: url('fonts/RavensaraSansLight.ttf') format('truetype');
+            font-weight: 300;
+            font-style: normal;
+        }
+        
+        @import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:wght@400;600&family=Jost:wght@200;300;400&family=Italiana&family=Prata&display=swap');
         
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Montserrat', sans-serif;
+            font-family: 'Ravensara Sans', sans-serif;
+            font-weight: 300;
         }
 
         body {
@@ -71,10 +79,10 @@
 
         h1 {
             font-size: 72px;
-            font-family: 'Playfair Display', serif;
-            font-weight: 700;
+            /* font-family: 'Bodoni Moda', serif; */
+            font-weight: 400;
             margin-bottom: 35px;
-            letter-spacing: 2px;
+            letter-spacing: 3px;
             text-transform: uppercase;
             background: linear-gradient(135deg, #ffffff 0%, #cccccc 50%, #ffffff 100%);
             -webkit-background-clip: text;
@@ -87,7 +95,7 @@
             width: 100%;
             max-width: 450px;
             padding: 20px;
-            font-size: 17px;
+            font-size: 16px;
             border: none;
             border-bottom: 2px solid rgba(255,255,255,0.3);
             background: transparent;
@@ -96,7 +104,9 @@
             outline: none;
             transition: all 0.3s ease;
             text-transform: uppercase;
-            letter-spacing: 2px;
+            letter-spacing: 3px;
+            font-family: 'Ravensara Sans', sans-serif;
+            font-weight: 200;
         }
 
         input[type="email"]:focus {
@@ -106,24 +116,27 @@
         input::placeholder {
             color: rgba(255, 255, 255, 0.5);
             text-transform: uppercase;
-            letter-spacing: 2px;
+            letter-spacing: 3px;
             font-size: 14px;
+            font-family: 'Ravensara Sans', sans-serif;
+            font-weight: 200;
         }
 
         button {
             margin-top: 25px;
             padding: 20px 50px;
-            font-size: 16px;
+            font-size: 20px;
             color: black;
             background: #ffffff;
             border: none;
             cursor: pointer;
             transition: all 0.3s ease;
-            font-weight: 600;
-            letter-spacing: 3px;
+            font-weight: 300;
+            letter-spacing: 4px;
             text-transform: uppercase;
             position: relative;
             overflow: hidden;
+            font-family: 'Ravensara Sans', sans-serif;
         }
 
         button:hover {
@@ -160,17 +173,19 @@
         .info-section h2 {
             font-size: 28px;
             margin-bottom: 25px;
-            font-family: 'Playfair Display', serif;
+            /* font-family: 'Italiana', serif; */
             color: #ffffff;
             text-transform: uppercase;
-            letter-spacing: 2px;
+            letter-spacing: 3px;
         }
 
         .info-section p {
-            font-size: 15px;
+            font-size: 20px;
             line-height: 1.9;
             color: rgba(255, 255, 255, 0.7);
-            letter-spacing: 1px;
+            letter-spacing: 1.5px;
+            font-family: 'Ravensara Sans', sans-serif;
+            font-weight: 200;
         }
 
         .steps-container {
@@ -211,12 +226,10 @@
             width: 400px;
             height: 400px;
             object-fit: cover;
-            /* filter: grayscale(100%) contrast(120%); */
             transition: all 0.5s ease;
         }
 
         .step img:hover {
-            /* filter: grayscale(0%) contrast(100%); */
             transform: scale(1.05);
         }
 
@@ -228,10 +241,10 @@
         .step-text h2 {
             font-size: 36px;
             margin-bottom: 25px;
-            font-family: 'Playfair Display', serif;
+            /* font-family: 'Prata', serif; */
             color: #ffffff;
             text-transform: uppercase;
-            letter-spacing: 2px;
+            letter-spacing: 3px;
             position: relative;
             text-align: left;
         }
@@ -247,10 +260,12 @@
         }
 
         .step-text p {
-            font-size: 17px;
+            font-size: 20px;
             line-height: 1.9;
             color: rgba(255, 255, 255, 0.7);
-            letter-spacing: 1px;
+            letter-spacing: 1.5px;
+            font-family: 'Ravensara Sans', sans-serif;
+            font-weight: 200;
         }
 
         @media (max-width: 768px) {
@@ -319,29 +334,29 @@
             <form action="https://formspree.io/f/meoekrne" method="POST">
                 <input type="email" id="email" name="email" placeholder="Enter your email" required>
                 <br>
-                <button type="submit">Join The Movement</button>
+                <button type="submit">Reserve Your Spot</button>
             </form>
         </div>
     </div>
     
     <div class="info-container">
         <div class="info-section">
-            <h2>Future of Fashion</h2>
-            <p>Discover curated pieces that define the next era of style.</p>
+            <h2>No more endless searching</h2>
+            <p>We do the hard work for you. You just have to shop for things you generally like and we'll show you better options when you want to see them.</p>
         </div>
 
         <div class="info-section">
-            <h2>Your Signature Look</h2>
-            <p>AI-powered styling that understands your unique aesthetic.</p>
+            <h2>Tailored to you and only you</h2>
+            <p>We understand you like no one else does. By understanding your style, we'll always find clothes that you'll actually love.</p>
         </div>
 
         <div class="info-section">
-            <h2>Early Access</h2>
-            <p>Be among the first to experience fashion's digital revolution.</p>
+            <h2>All without breaking the bank</h2>
+            <p>Who doesn't love a discount? Not only will we find you better clothes, but we'll markdown the price for you.</p>
         </div>
     </div>
 
-    <div class="steps-container">
+    <!-- <div class="steps-container">
         <h1>The Experience</h1>
         <div class="step">
             <img src="images/install.png" alt="Step 1">
@@ -357,13 +372,13 @@
             </div>
             <img src="images/shop.png" alt="Step 2">
         </div>
-        <!-- <div class="step">
+        <div class="step">
             <img src="images/pdp.png" alt="Step 3">
             <div class="step-text">
                 <h2>Curated Selection</h2>
                 <p>Receive handpicked recommendations that align with your aesthetic vision.</p>
             </div>
-        </div> -->
+        </div>
         <div class="step">
             <img src="images/bff.png" alt="Step 3">
             <div class="step-text">
@@ -371,13 +386,14 @@
                 <p>Transform your style while maintaining your budget. Luxury aesthetics meet smart spending.</p>
             </div>
         </div>
-    </div>
+    </div> -->
 
     <div class="hero">
         <div class="container">
-            <h1>Join The Waitlist</h1>
+            <h1>Feels too good to be true? It isn't!<br>Join The Waitlist</h1>
             <form action="https://formspree.io/f/meoekrne" method="POST">
                 <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                <br>
                 <button type="submit">Reserve Your Spot</button>
             </form>
         </div>
