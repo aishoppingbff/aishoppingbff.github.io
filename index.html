@@ -21,14 +21,27 @@
             font-family: 'Ravensara Sans', sans-serif;
             font-weight: 300;
             text-align: center;
+            overflow-x: hidden;
+        }
+
+        .body-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.3)), url('images/desktop.png');
+            background-size: cover;
+            z-index: -1; /* Make sure the background stays behind other content */
+        }
+
+        @media (max-width: 768px) {
+            .body-bg {
+                background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.3)), url('images/mobile.png');
+            }
         }
 
         .hero {
-            background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.3)), url('images/desktop.png');
-            background-size: 100% 100%;
-            background-position: center;
-            background-attachment: fixed;
-            background-repeat: no-repeat;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -37,14 +50,6 @@
             width: 100vw;
             padding: 40px 20px;
             position: relative;
-            overflow: hidden;
-        }
-
-        @media (max-width: 768px) {
-            .hero {
-                background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.3)), url('images/mobile.png');
-                background-attachment: scroll;
-            }
         }
 
         .container {
@@ -314,6 +319,7 @@
     </style>
 </head>
 <body>
+    <div class="body-bg"></div>
     <div class="hero">
         <div class="container">
             <h1>Join The Waitlist</h1>
